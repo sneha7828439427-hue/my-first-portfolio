@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <select onchange="abc(this.value)">
+        <option> Select Course</option>
+        <option>MCA</option>
+        <option>BCA</option>
+        <option>BSC</option> 
+  </select>
+  <br> <br>
+  <select id="s1" onchange="xyz(this.value)">
+            <option>Select Class</option>
+  </select> 
+  <br><br>
+  <select id="s2">
+     <option>Select Semester</option>
+  </select>
+<script>
+    function abc(a) {
+        if (a == "MCA") {
+            document.getElementById("s1").innerHTML =
+                "<option value=''>Select Class</option>" +
+                "<option value='MCA 1'>MCA 1</option>" +
+                "<option value='MCA 2'>MCA 2</option>" +
+                "<option value='MCA 3'>MCA 3</option>";
+        }
+        else if (a == "BCA") {
+            document.getElementById("s1").innerHTML =
+                "<option value=''>Select Class</option>" +
+                "<option value='BCA 1'>BCA 1</option>" +
+                "<option value='BCA 2'>BCA 2</option>" +
+                "<option value='BCA 3'>BCA 3</option>";
+        }
+        else if (a == "BSC") {
+            document.getElementById("s1").innerHTML =
+                "<option value=''>Select Class</option>" +
+                "<option value='BSC 1'>BSC 1</option>" +
+                "<option value='BSC 2'>BSC 2</option>" +
+                "<option value='BSC 3'>BSC 3</option>";
+        }
+        else {
+            document.getElementById("s1").innerHTML =
+                "<option> Select Class </option>";
+        }
+    }
+
+    function xyz(a) {
+        if (a == "MCA 1" || a == "BCA 1" || a == "BSC 1") {
+            document.getElementById("s2").innerHTML =
+                "<option>Semester 1</option>" +
+                "<option>Semester 2</option>";
+        }
+
+        else if (a == "MCA 2" || a == "BCA 2" || a == "BSC 2") {
+            document.getElementById("s2").innerHTML =
+                "<option>Semester 3</option>" +
+                "<option>Semester 4</option>";
+        }
+
+        else if (a == "MCA 3" || a == "BCA 3" || a == "BSC 3") {
+            document.getElementById("s2").innerHTML =
+                "<option>Semester 5</option>" +
+                "<option>Semester 6</option>";
+        }
+
+        else {
+            document.getElementById("s2").innerHTML =
+                "<option>Select Semester</option>";
+        }
+    }
+</script>
+</body>
+</html>

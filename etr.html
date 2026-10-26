@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+             border: thin solid black;
+            padding: 5px;
+            width: auto;
+            text-align: center;
+            border-radius: 10px;
+            margin: 100px;
+        }
+        .a{
+            font-size: 20px;
+            font-weight: bold;
+            width: 200px;
+            text-align: center;
+        
+        }
+        #t1{
+            padding: 5px;
+            width: 200px;
+            font-size: 20px;
+        }
+        #b{
+            background-color: purple;
+            color: blue;
+            width: 100px;
+            margin: auto;
+            padding: 5px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <div class="a"> Enter number </div>
+    <input type="text" value="0" id="t1">
+    <br>
+    <br>
+    <input type="button" value="GET" onclick="get()" id="b">
+    <div id="c" > Result: </div>
+    </center>
+    <script>
+            function get()
+            {
+                var a=document.getElementById("t1").value;
+                if(a%2==0)
+            {
+                document.getElementById("c").innerHTML="Even";
+            
+            }
+            else
+            {
+                document.getElementById("c").innerHTML="odd";
+            }
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter Mobile Number <br>
+    <input type="text" id="t1" style="width: 300px; font-size: 20px;"
+    onblur="check(this.id)"> <img src="d.jpg"
+    width="30" height="30" id="i1" style="display: none;">
+    <img src="e.jpg" width="30" height="30" id="i2" style="display: none;">
+    <br><br><br>
+    Enter Address<br><input type="text" style="width:400px; font-size: 80px;">
+    <br>
+
+</body>
+</html>
+<script>
+     function check(z){
+        var a = document.getElementById(z).value;
+        if(isNaN(a)||a=== ""){
+            document.getElementById("i1").style.display="inline";
+            document.getElementById("i2").style.display="none";
+        }
+    else{
+        if(a.length == 10){
+            document.getElementById("i2").style.display="inline";
+            document.getElementById("i1").style.display="none";
+        }
+    else{
+        document.getElementById("i1").style.display="inline";
+        document.getElementById("i2").style.display="none";
+    }
+    }
+     }
+</script>

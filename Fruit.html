@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Example</title>
+
+    <style>
+        body {
+            border: thin solid black;
+            padding: 5px;
+            width: 400px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 50px;
+        }
+
+        .a {
+            font-size: 26px;
+            font-weight: bold;
+            width: 200px;
+            text-align: center;
+        }
+
+        #t1 {
+            padding: 5px;
+            width: 200px;
+            font-size: 20px;
+        }
+
+        #b {
+            background-color: purple;
+            color: white;
+            width: 100px;
+            margin: auto;
+            padding: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #C {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body><center>
+    <div class="a">Enter Fruit Number</div>
+
+    <input type="text" id="t1" placeholder="01">
+
+    <br><br>
+
+    <input type="button" value="GET" onclick="getFruit()" id="b">
+
+    <div id="C">Fruit :</div></center>
+    <script>
+
+        function getFruit() {
+            var a = document.getElementById("t1").value.toLowerCase();
+
+            switch (a) {
+                case "01":
+                    document.getElementById("C").innerHTML = "Fruit : Apple";
+                    break;
+
+                case "02":
+                    document.getElementById("C").innerHTML = "Fruit : Mango";
+                    break;
+
+                case "03":
+                    document.getElementById("C").innerHTML = "Fruit : Banana";
+                    break;
+
+                case "04":
+                    document.getElementById("C").innerHTML = "Fruit : Orange";
+                    break;
+
+                case "05":
+                    document.getElementById("C").innerHTML = "Fruit : Grapes";
+                    break;
+
+                default:
+                    document.getElementById("C").innerHTML = "Invalid Fruit";
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

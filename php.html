@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        Enter First value<br>
+        <input type="text" name="t1" value="0"><br>
+        Enter Second Value <br>
+        <input type="text" name="t2" value="0"> <br><br>
+
+        <?php
+        if(isset($_POST['t1']))
+        {
+            $a=$_POST['t1'];
+            $b=$_POST['t2'];
+            echo "<h1>".($a+$b)."</h1>";
+        }
+        ?>
+
+        <input type="submit" name="s1" value="ADD">
+    
+    </form>
+</body>
+</html>

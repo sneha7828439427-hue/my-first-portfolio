@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter name <br>
+    <input type="text" id="t1"><br>
+    Enter City <br>
+    <input type="text" id="t2"><br>
+    Enter Course <br>
+    <select id="t3">
+        <option> select course </option>
+        <option> MCA </option>
+        <option> BCA </option>
+    </select><br>
+    <input type="button" value="save" onclick="save()">
+    <input type="button" value="print" onclick="print()">
+</body>
+<script>
+    var a=[];
+    var i=0;
+    function save()
+        {
+            var b=document.getElementById("t1").value;
+            var c=document.getElementById("t2").value;
+            var d=document.getElementById("t3").value;
+              a[i]=[b,c,d];
+              i=i+1;
+        }
+        function print()
+        {
+            document.write(a);
+        }
+</script>
+</html>

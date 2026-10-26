@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            background-color: #f2f2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        table {
+            background-color: #222;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        td {
+            padding: 4px;
+            border: none;
+        }
+
+        #t1 {
+            width: 100%;
+            height: 60px;
+            background-color: black;
+            color: lime;
+            border: none;
+            border-radius: 7px;
+            font-size: 30px;
+            text-align: right;
+            padding-right: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            width: 90px;
+            height: 90px;
+            border: none;
+            border-radius: 8px;
+            background-color: #444;
+            color: white;
+            font-size: 25px;
+        }
+        .operator 
+        {
+            background-color: darksalmon !important;
+        }
+        .delete
+        {
+            background-color: aqua !important;
+        }
+        .percent
+        {
+            background-color: blueviolet !important;
+        }
+        .clear
+         {
+            background-color:green!important;
+         }
+         .number
+         {
+            background-color: red !important;
+         }
+         .equal 
+         {
+           background-color:darksalmon !important;
+         }
+        </style>
+</head>
+
+<body>
+    <table border="1" width="300">
+        <tr>
+            <td colspan="4"><input type="text" value="" style="width: 100%;" id="t1"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="C" class="clear" onclick="clr()"></td>
+            <td><input type="button" value="⌫" class="delete" onclick="del()"> </td>
+            <td><input type="button" value="%" class="percent" onclick="percent()"></td>
+            <td><input type="button" value="÷" class="operator" onclick="op('/')"></td> 
+        </tr>
+        <tr>
+            <td><input type="button" value="7" class="number" onclick="abc(this.value)"></td>
+            <td><input type="button" value="8" class="number" onclick="abc(this.value)"> </td>
+            <td><input type="button" value="9" class="number" onclick="abc(this.value)"></td>
+            <td><input type="button" value="+" class="operator" onclick="op(this.value)"></td> 
+        </tr>
+        <tr>
+            <td><input type="button" value="4" class="number" onclick="abc(this.value)"></td>
+            <td><input type="button" value="5" class="number" onclick="abc(this.value)"> </td>
+            <td><input type="button" value="6" class="number" onclick="abc(this.value)"></td>
+            <td><input type="button" value="-" class="operator" onclick="op(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" class="number" onclick="abc(this.value)"></td>
+            <td><input type="button" value="2" class="number" onclick="abc(this.value)"> </td>
+            <td><input type="button" value="3" class="number" onclick="abc(this.value)"></td>
+            <td><input type="button" value="x" class="operator" onclick="op(this.value)"></td>
+        </tr>
+        <tr>
+           <td><input type="button" value="0" class="number" onclick="abc(this.value)"></td>
+
+<td>
+    <input type="button" value="." class="operator" onclick="abc(this.value)">
+</td>
+
+<td colspan="2">
+    <input type="button" value="=" class="equal" onclick="res()">
+</td>
+ </tr>
+    </table>
+</body>
+
+</html>
+<script>
+    var a1="";
+    var fv=0;
+    var sv=0;
+    var oop="";
+    
+    function abc(h)
+    {
+    a1= document.getElementById("t1").value;
+    document.getElementById("t1").value=a1+h;
+    }
+
+
+    function op(z)
+    {
+        fv= document.getElementById("t1").value;
+        document.getElementById("t1").value="";
+        oop=z;
+    }
+    function clr()
+{
+    document.getElementById("t1").value = "";
+    fv = 0;
+    sv = 0;
+    oop = "";
+}
+      function del()
+{
+    var v = document.getElementById("t1").value;
+    document.getElementById("t1").value = v.slice(0, -1);
+}
+    function percent()
+{
+    var v = document.getElementById("t1").value;
+    document.getElementById("t1").value = parseFloat(v) / 100;
+}
+    function res()
+    {
+         sv= document.getElementById("t1").value;
+         var x;
+         if(oop=="+")
+         {
+             x = parseFloat(fv) + parseFloat(sv);
+         }
+
+         if(oop=="x")
+         {
+            x= parseFloat(fv) * parseFloat(sv);
+         }
+         if (oop=="-")
+         {
+            x= parseFloat(fv) - parseFloat(sv);
+         }
+         if(oop=="/")
+         {
+            x= parseFloat(fv) / parseFloat(sv);
+         }
+         document.getElementById("t1").value=x;
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prime Number</title>
+</head>
+
+<body>
+
+    <h2>Check Prime Number</h2>
+
+    <?php
+
+    $num = 20;
+    $isPrime = true;
+
+    if ($num < 2) {
+        $isPrime = false;
+    } else {
+
+        for ($i = 2; $i <= sqrt($num); $i++) {
+
+            if ($num % $i == 0) {
+                $isPrime = false;
+                break;
+            }
+        }
+    }
+
+    if ($isPrime) {
+        echo $num . " is a Prime Number.";
+    } else {
+        echo $num . " is Not a Prime Number.";
+    }
+
+    ?>
+
+</body>
+
+</html>
